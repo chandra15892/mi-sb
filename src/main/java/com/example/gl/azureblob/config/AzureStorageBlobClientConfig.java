@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AzureStorageBlobClientConfig {
 
-    @Value("${blob.connection-string}")
-    String connectionString;
+//    @Value("${blob.connection-string}")
+//    String connectionString;
 
     @Value("${blob.container-name}")
     String containerName;
     
-    @Value("${blob.client-id}")
+    @Value("${mi.client-id}")
     String clientId;
     
     @Value("${blob.storage-account}")
