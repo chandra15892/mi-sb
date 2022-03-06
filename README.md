@@ -1,3 +1,12 @@
+
+https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault
+https://blogs.ashrithgn.com/spring-boot-uploading-and-downloading-delete-to-azure-blob-storege-s3-alternative/
+https://github.com/chandra15892/mi-sb.git
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/authorize-managed-identity
+https://docs.microsoft.com/en-us/azure/app-service/deploy-zip?tabs=cli
+
+
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
