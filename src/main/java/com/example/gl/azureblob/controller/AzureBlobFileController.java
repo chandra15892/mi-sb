@@ -36,4 +36,11 @@ public class AzureBlobFileController {
 				.header("Content-disposition", "attachment; filename=\"" + file + "\"").body(resource);
 
 	}
+	
+	@GetMapping(path = "/test")
+	public ResponseEntity<String> testApi() throws IOException {
+		
+		return ResponseEntity.ok().body("Hello World");
+
+	}
 }
