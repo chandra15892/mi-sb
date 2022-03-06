@@ -28,7 +28,9 @@ public class AzureBlobFileController {
 	}
 
 	@GetMapping(path = "/download")
-	public ResponseEntity<ByteArrayResource> uploadFile(@RequestParam(value = "file") String file) throws IOException {
+	public ResponseEntity<ByteArrayResource> downloadFile(@RequestParam(value = "file") String file) throws IOException {
+		System.out.println("In downloadFile");
+
 		byte[] data = azureAdapter.getFile(file);
 		ByteArrayResource resource = new ByteArrayResource(data);
 

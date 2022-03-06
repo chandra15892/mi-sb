@@ -30,6 +30,7 @@ public class AzureBlobAdapter {
             try {
                 //implement your own file name logic.
                 String fileName = prefixName+ UUID.randomUUID().toString() +file.getOriginalFilename();
+                System.out.println("In upload AzureBlobAdapter");
                 client.blobName(fileName).buildClient().upload(file.getInputStream(),file.getSize());
                 return fileName;
             } catch (Exception e) {
@@ -41,7 +42,8 @@ public class AzureBlobAdapter {
 
     public byte[] getFile(String name) {
         try {
-            File temp = new File("/temp/"+name);
+            File temp = new File("/"+name);
+            System.out.println("In getFile AzureBlobAdapter");
             BlobProperties properties = client.blobName(name).buildClient().downloadToFile(temp.getPath());
             byte[] content = Files.readAllBytes(Paths.get(temp.getPath()));
             temp.delete();

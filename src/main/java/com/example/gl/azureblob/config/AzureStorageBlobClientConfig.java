@@ -36,6 +36,8 @@ public class AzureStorageBlobClientConfig {
         client.credential(managedIdentityCredential);
 //        client.connectionString(connectionString);
         client.containerName(containerName);
+        System.out.println(client.toString());
+        
         return client;
     }
 }
