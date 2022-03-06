@@ -11,11 +11,12 @@ import com.example.gl.azureblob.service.AzureBlobAdapter;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 public class AzureBlobFileController {
-	
+
 	@Autowired
 	AzureBlobAdapter azureAdapter;
 
@@ -29,22 +30,28 @@ public class AzureBlobFileController {
 	}
 
 	@GetMapping(path = "/download")
-	public ResponseEntity<ByteArrayResource> downloadFile(@RequestParam(value = "file") String file) throws IOException {
+	public ResponseEntity<ByteArrayResource> downloadFile(@RequestParam(value = "file") String file)
+			throws IOException {
 		System.out.println("In downloadFile");
-
 		byte[] data = azureAdapter.getFile(file);
 		ByteArrayResource resource = new ByteArrayResource(data);
-
 		return ResponseEntity.ok().contentLength(data.length).header("Content-type", "application/octet-stream")
 				.header("Content-disposition", "attachment; filename=\"" + file + "\"").body(resource);
 
 	}
-	
+
 	@GetMapping(path = "/test")
 	public ResponseEntity<String> testApi() throws IOException {
 		System.out.println("In testApi");
-		
 		return ResponseEntity.ok().body("Hello World");
+
+	}
+	
+	@GetMapping(path = "/blob_list")
+	public ResponseEntity<List<String>> blobListByContainer()
+			throws IOException {
+		System.out.println("In blobListByContainer");
+		return ResponseEntity.ok().body(azureAdapter.blobListByContainer());
 
 	}
 }
