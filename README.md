@@ -1,3 +1,5 @@
+Taken below references
+
 
 https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault
 https://blogs.ashrithgn.com/spring-boot-uploading-and-downloading-delete-to-azure-blob-storege-s3-alternative/
