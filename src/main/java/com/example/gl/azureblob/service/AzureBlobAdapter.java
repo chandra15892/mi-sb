@@ -48,11 +48,13 @@ public class AzureBlobAdapter {
 
     public byte[] getFile(String name) {
         try {
-            File temp = new File("/"+name);
+            File temp = new File(name);
+            System.out.println(temp == null);
             System.out.println("In getFile AzureBlobAdapter");
             
 //            BlobProperties properties = client.blobName(name).buildClient().downloadToFile(temp.getPath());
             BlobProperties properties = blobContainerClient.getBlobClient(name).downloadToFile(temp.getPath());
+            System.out.println(properties.getVersionId());
             byte[] content = Files.readAllBytes(Paths.get(temp.getPath()));
             temp.delete();
             return content;

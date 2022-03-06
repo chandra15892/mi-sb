@@ -15,6 +15,7 @@ import java.util.Map;
 
 @RestController
 public class AzureBlobFileController {
+	
 	@Autowired
 	AzureBlobAdapter azureAdapter;
 
@@ -41,6 +42,7 @@ public class AzureBlobFileController {
 	
 	@GetMapping(path = "/test")
 	public ResponseEntity<String> testApi() throws IOException {
+		System.out.println("In testApi");
 		
 		return ResponseEntity.ok().body("Hello World");
 
